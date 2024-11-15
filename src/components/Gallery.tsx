@@ -21,22 +21,22 @@ const Gallery = () => {
     {
       year: 2020,
       url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "International Workshop 2021"
+      title: "International Workshop 2020"
     },
     {
       year: 2019,
       url: "https://efss-eg.com/ga2019.php",
-      title: "International Workshop 2021"
+      title: "International Workshop 2019"
     },
     {
       year: 2018,
       url: "https://efss-eg.com/ga2018.php",
-      title: "International Workshop 2021"
+      title: "International Workshop 2018"
     },
     {
       year: 2017,
       url: "https://efss-eg.com/ga2017.php",
-      title: "International Workshop 2021"
+      title: "International Workshop 2017"
     },
     // Add more images as needed
   ];
@@ -49,7 +49,7 @@ const Gallery = () => {
           {images.map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
               <img
-                src={image.url}
+                src={image.url.endsWith('.php') ? '/default-thumbnail.jpg' : image.url}  // Use default image for PHP URLs
                 alt={image.title}
                 className="w-full h-64 object-cover transform transition-transform group-hover:scale-110"
               />
@@ -57,10 +57,15 @@ const Gallery = () => {
                 <div className="p-4 w-full">
                   <h3 className="text-white text-xl font-bold">{image.title}</h3>
                   <p className="text-gray-200">{image.year}</p>
-                  <button className="mt-2 inline-flex items-center text-white hover:text-[#1abc9c] transition-colors">
+                  <a
+                    href={image.url} // Link to the PHP page or image
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center text-white hover:text-[#1abc9c] transition-colors"
+                  >
                     View Gallery
                     <ExternalLink className="ml-1 h-4 w-4" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
