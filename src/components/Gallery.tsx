@@ -5,38 +5,18 @@ const Gallery = () => {
   const images = [
     {
       year: 2023,
-      url: "https://efss-eg.com/ga2023.php",
+      url: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       title: "Annual Conference 2023"
     },
     {
       year: 2022,
-      url: "https://efss-eg.com/ga2022.php",
+      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       title: "Research Symposium 2022"
     },
     {
       year: 2021,
-      url: "https://efss-eg.com/ga2021.php",
-      title: "International Workshop 2021"
-    },
-    {
-      year: 2020,
       url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      title: "International Workshop 2020"
-    },
-    {
-      year: 2019,
-      url: "https://efss-eg.com/ga2019.php",
-      title: "International Workshop 2019"
-    },
-    {
-      year: 2018,
-      url: "https://efss-eg.com/ga2018.php",
-      title: "International Workshop 2018"
-    },
-    {
-      year: 2017,
-      url: "https://efss-eg.com/ga2017.php",
-      title: "International Workshop 2017"
+      title: "International Workshop 2021"
     },
     // Add more images as needed
   ];
@@ -49,7 +29,7 @@ const Gallery = () => {
           {images.map((image, index) => (
             <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
               <img
-                src={image.url.endsWith('.php') ? '/default-thumbnail.jpg' : image.url}  // Use default image for PHP URLs
+                src={image.url}
                 alt={image.title}
                 className="w-full h-64 object-cover transform transition-transform group-hover:scale-110"
               />
@@ -57,15 +37,10 @@ const Gallery = () => {
                 <div className="p-4 w-full">
                   <h3 className="text-white text-xl font-bold">{image.title}</h3>
                   <p className="text-gray-200">{image.year}</p>
-                  <a
-                    href={image.url} // Link to the PHP page or image
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center text-white hover:text-[#1abc9c] transition-colors"
-                  >
+                  <button className="mt-2 inline-flex items-center text-white hover:text-[#1abc9c] transition-colors">
                     View Gallery
                     <ExternalLink className="ml-1 h-4 w-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
