@@ -111,22 +111,57 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link 
-              to="/journal" 
-              className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
-                isActive('/journal') ? 'bg-[#1abc9c]' : ''
-              }`}
-            >
-              Journal
-            </Link>
-            <Link 
-              to="/annual Meeting" 
-              className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
-                isActive('/annual Meeting') ? 'bg-[#1abc9c]' : ''
-              }`}
-            >
-              Annual Meeting
-            </Link>
+            <div className="relative group">
+                <button className="nav-link inline-flex items-center">
+                  Annual Meeting
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="absolute hidden group-hover:block w-48 bg-[#2C3E50] rounded-md shadow-lg py-1">
+                  {annualMeetings.map(year => (
+                    <Link 
+                      key={year} 
+                      to={`/meeting/${year}`} 
+                      className={`block px-3 py-2 text-white hover:bg-[#1abc9c] transition-colors ${
+                        isActive(`/meeting/${year}`) ? 'bg-[#1abc9c]' : ''
+                      }`}
+                    >
+                      {year}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="relative group">
+                <button className="nav-link inline-flex items-center">
+                  Journal
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                </button>
+                <div className="absolute hidden group-hover:block w-48 bg-[#2C3E50] rounded-md shadow-lg py-1">
+                  <Link 
+                    to="/journal/current" 
+                    className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
+                      isActive('/journal/current') ? 'bg-[#1abc9c]' : ''
+                    }`}
+                  >
+                    Current Issue
+                  </Link>
+                  <Link 
+                    to="/journal/archive" 
+                    className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
+                      isActive('/journal/archive') ? 'bg-[#1abc9c]' : ''
+                    }`}
+                  >
+                    Archive
+                  </Link>
+                  <Link 
+                    to="/journal/submit" 
+                    className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
+                      isActive('/journal/submit') ? 'bg-[#1abc9c]' : ''
+                    }`}
+                  >
+                    Submit Paper
+                  </Link>
+                </div>
+              </div>
             <Link 
               to="/gallery" 
               className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
