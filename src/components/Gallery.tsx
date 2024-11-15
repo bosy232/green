@@ -5,17 +5,37 @@ const Gallery = () => {
   const images = [
     {
       year: 2023,
-      url: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      url: "https://efss-eg.com/ga2023.php",
       title: "Annual Conference 2023"
     },
     {
       year: 2022,
-      url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      url: "https://efss-eg.com/ga2022.php",
       title: "Research Symposium 2022"
     },
     {
       year: 2021,
+      url: "https://efss-eg.com/ga2021.php",
+      title: "International Workshop 2021"
+    },
+    {
+      year: 2020,
       url: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      title: "International Workshop 2021"
+    },
+    {
+      year: 2019,
+      url: "https://efss-eg.com/ga2019.php",
+      title: "International Workshop 2021"
+    },
+    {
+      year: 2018,
+      url: "https://efss-eg.com/ga2018.php",
+      title: "International Workshop 2021"
+    },
+    {
+      year: 2017,
+      url: "https://efss-eg.com/ga2017.php",
       title: "International Workshop 2021"
     },
     // Add more images as needed
