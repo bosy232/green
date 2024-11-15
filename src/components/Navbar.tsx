@@ -112,6 +112,22 @@ const Navbar = () => {
               About
             </Link>
             <Link 
+              to="/journal" 
+              className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
+                isActive('/journal') ? 'bg-[#1abc9c]' : ''
+              }`}
+            >
+              Journal
+            </Link>
+            <Link 
+              to="/annual Meeting" 
+              className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
+                isActive('/annual Meeting') ? 'bg-[#1abc9c]' : ''
+              }`}
+            >
+              Annual Meeting
+            </Link>
+            <Link 
               to="/gallery" 
               className={`block px-3 py-2 text-white hover:bg-[#1abc9c] ${
                 isActive('/gallery') ? 'bg-[#1abc9c]' : ''
